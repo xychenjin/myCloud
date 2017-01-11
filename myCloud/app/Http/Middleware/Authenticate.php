@@ -42,6 +42,9 @@ class Authenticate
             }
         }
 
+        if (! \Auth::check()) {
+            return redirect('admin/login');
+        }
         return $next($request);
     }
 }
